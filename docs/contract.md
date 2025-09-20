@@ -1,0 +1,1 @@
+# Contracts\n\n- JS ↔ Unity JSON schema goes here.
