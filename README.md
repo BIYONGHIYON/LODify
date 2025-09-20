@@ -1,12 +1,30 @@
-# Distance-based LOD Optimization 
+# 거리 기반 LOD 최적화 알고리즘 & 실시간 렌더링 품질·성능 비교 도구
 
-## Packages
-- frontend: Web UI (Unity WebGL embed, controls, charts)
-- unity: Unity project (LOD, metrics, bridge)
-- alg: Mesh/texture simplification experiments (QEM, palette)
-- docs: Specs and notes (contracts, architecture)
+게임 환경에서 멀리 있는 사물을 효율적으로 렌더링하기 위해, 거리에 따라 렌더링 품질을 동적으로  
+조절하는 알고리즘을 개발한다.  
+또한, 이러한 알고리즘을 웹사이트 상에서 직접 테스트·비교할 수 있는 도구를 제작한다.
 
-## Quick Start
-- frontend: (choose Vite or Next later)
-- unity: open project in Editor (build artifacts are ignored)
-- alg: python -m venv .venv && pip install -r alg/requirements.txt
+---
+
+## 👥 팀원 및 역할 분담
+
+### 📝 이병현
+- 기획
+- LOD 생성 알고리즘 구현
+- 문서·보고서 작성
+
+### 🎮 김경찬
+- Unity 연동·렌더링
+- 웹과의 파라미터 연동 및 성능 측정 데이터 전달
+- WebGL을 통한 Unity WebGL 빌드 임베드 및 통신 로직 구현
+
+### 💻 김준석 & 정서현
+- 거리 슬라이더·알고리즘 선택 등 UI 구현
+- 사용자 모델 업로드 기능 및 전처리
+- 서버·파일 처리 및 보안 설정
+
+### 🧩 이준후
+- LOD 생성 알고리즘 구현
+
+### 🧩 황정민
+- LOD 생성 알고리즘 구현
