@@ -1,0 +1,9 @@
+{
+  "name": "lod-frontend",
+  "private": true,
+  "scripts": {
+    "dev": "echo dev server here (vite or next)",
+    "build": "echo build here",
+    "lint": "echo lint here"
+  }
+}

@@ -1,0 +1,22 @@
+# general
+.DS_Store
+*.log
+.env
+
+# node / frontend
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/.vite/
+
+# python / alg
+alg/__pycache__/
+alg/.venv/
+alg/out/
+
+# unity (빌드/캐시 제외)
+unity/Library/
+unity/Temp/
+unity/Build/
+unity/Logs/
+unity/obj/
