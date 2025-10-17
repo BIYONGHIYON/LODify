@@ -1,1 +1,0 @@
-# Architecture\n\n- Frontend / Unity / Alg overview.
