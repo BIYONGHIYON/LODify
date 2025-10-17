@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LODify</title>
+    
+    <link rel="stylesheet" href="index.css"> 
+    
+</head>
+<body>
+
+    <div id="control-panel">
+        <h1>LODify</h1>
+        <h2>LOD 제어 설정</h2>
+
+        <div class="control-group">
+            <label for="model-upload">모델 파일 업로드 (.obj/.ply/.pcd/.xyz)</label>
+            <input type="file" id="model-upload" accept=".obj, .ply, .pcd, .xyz" onchange="uploadModel(event)">
+        </div>
+
+        <div class="control-group">
+            <label for="algorithm-select">알고리즘 선택:</label>
+            <select id="algorithm-select">
+                <option value="custom">이병현알골</option>
+                <option value="qem">이준후알골</option>
+                <option value="bpa">황정민알골</option>
+            </select>
+            <br>
+            <button onclick="processModel()">알고리즘 적용</button> <!--백엔드로 요청하는거-->
+        </div>
+        
+        <div class="control-group">
+            <label for="distance-slider">거리 조절</label>
+            <input type="range" id="distance-slider" min="0" max="1000" value="500" oninput="updateDistanceValue(this.value)">
+            <p>현재 거리: <span id="distance-value">500</span> m</p>
+        </div>
+
+        <div id="info-box" class="control-group info-box">
+            <label>성능 측정</label><!--json으로 값불러오기-->
+            <p>FPS: <span id="fps-value">--</span></p>
+            <p>알고리즘 실행 시간: <span id="time-value">--</span> 초</p>
+            <p>폴리곤 수: <span id="polygon-count">--</span></p>
+        </div>
+    </div>
+
+    <div id="viewer-container">
+        <div id="unity-canvas">
+            <!-- 유니티 연동부분 -->
+        </div>
+    </div>
+
+    <script>
+        //거리 슬라이더 값 업데이트
+        function updateDistanceValue(value) {
+            document.getElementById('distance-value').innerText = value;
+            //Unity로 거리 값 전송
+            sendToUnity('UpdateDistance', value);
+        }
+
+        //모델 업로드 처리 (백엔드로 파일 전송)
+        function uploadModel(event) {
+            const file = event.target.files[0];
+            if (file) {
+                console.log(`파일 업로드 준비: ${file.name}`);
+                //백엔드 통신 로직
+            }
+        }
+
+        //알고리즘 실행 버튼 클릭 시 (백엔드에 처리 요청)
+        function processModel() {
+            const selectedAlgorithm = document.getElementById('algorithm-select').value;
+            console.log(`백엔드에 [${selectedAlgorithm}] 알고리즘 실행 요청`);
+            //백엔드가 변환을 완료하면 Unity가 새로운 LOD 파일들을 로드하도록
+        }
+    </script>
+</body>
+</html>

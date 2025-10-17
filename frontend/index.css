@@ -1,0 +1,117 @@
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    margin: 0; 
+    height: 100vh;
+    background-color: #e9ecef;
+    color: #343a40;
+    overflow: hidden;
+}
+
+/* 제어판*/
+#control-panel { 
+    width: 320px; 
+    min-width: 280px;
+    padding: 25px; 
+    background-color: #ffffff; 
+    border-right: 1px solid #dee2e6; 
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05); 
+    flex-shrink: 0;
+}
+
+/* 유니티부분 */
+#viewer-container { 
+    flex-grow: 1;
+    position: relative; 
+}
+#unity-canvas { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+    background-color: #212529;
+}
+
+/* 제목 */
+h1 {
+    color: #007bff;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size:4em;
+}
+h2 {
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.control-group { 
+    margin-bottom: 25px; 
+    padding: 15px; 
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da; 
+    border-radius: 8px;
+}
+.control-group label { 
+    display: block; 
+    margin-bottom: 8px; 
+    font-weight: 600; 
+    color: #495057;
+}
+
+/* 입력, 버튼 */
+input[type="file"], select, input[type="range"] {
+    width: 100%;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+}
+button:hover {
+    background-color: #218838;
+}
+
+/* 정보 표시 영역 */
+.info-box {
+    background-color: #e2f0fb;
+    border-color: #b3d7ff;
+    color: #004085;
+}
+.info-box label {
+    color: #004085;
+}
+.info-box p { 
+    margin: 5px 0; 
+    font-size: 0.95em; 
+}
+.info-box span {
+    font-weight: bold;
+    color: #343a40;
+}
+
+/* 거리 조절 슬라이더 값  */
+#distance-value {
+    color: #dc3545;
+}
